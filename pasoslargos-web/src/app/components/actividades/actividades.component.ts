@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 interface TimelineEvent {
   month: string;
@@ -18,19 +19,7 @@ interface ProjectArea {
   templateUrl: './actividades.component.html',
   styleUrl: './actividades.component.css'
 })
-export class ActividadesComponent {
-  mainActivities = [
-    'Excursiones',
-    'Senderismo',
-    'Escalada',
-    'Vias Ferratas',
-    'Alpinismo',
-    'Esquí de Travesía',
-    'Descenso de Barrancos',
-    'Acampadas Alpinísticas',
-    'Raquetas de Nieve',
-    'Marcha'
-  ];
+export class ActividadesComponent implements OnInit {
 
   timeline2025: TimelineEvent[] = [
     {
@@ -150,4 +139,16 @@ export class ActividadesComponent {
       ]
     }
   ];
+
+  activeSection: string = 'proximas-rutas';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params['section']) {
+        this.activeSection = params['section'];
+      }
+    });
+  }
 }

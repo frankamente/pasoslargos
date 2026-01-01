@@ -1,41 +1,38 @@
 <div class="actividades-container">
   
-  <!-- Main Activities -->
-  <section class="intro-activities">
-    <h2>Nuestras Actividades</h2>
-    <div class="tags-container">
-      <span class="activity-tag" *ngFor="let activity of mainActivities">{{ activity }}</span>
-    </div>
-  </section>
+  <ng-container *ngIf="activeSection === 'nuestras-actividades'">
 
-  <!-- Timeline 2025 -->
-  <section class="timeline-section">
-    <h3>Memoria de Actividades 2025</h3>
-    <div class="timeline">
-      <div class="timeline-item" *ngFor="let monthItem of timeline2025">
-        <div class="timeline-content">
-          <div class="month-badge">{{ monthItem.month }}</div>
-          <ul class="event-list">
-            <li *ngFor="let event of monthItem.events">{{ event }}</li>
+    <!-- Timeline 2025 -->
+    <section class="timeline-section">
+      <h2>Memoria de Actividades 2025</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let monthItem of timeline2025">
+          <div class="timeline-content">
+            <div class="month-badge">{{ monthItem.month }}</div>
+            <ul class="event-list">
+              <li *ngFor="let event of monthItem.events">{{ event }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ng-container>
+
+  <ng-container *ngIf="activeSection === 'proximas-rutas'">
+    <!-- Future Projects -->
+    <section class="projects-section">
+      <h3>Proyectos Futuros</h3>
+      <p class="section-subtitle">Lo que está por venir</p>
+      
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of futureProjects">
+          <h4>{{ project.area }}</h4>
+          <ul>
+            <li *ngFor="let item of project.items">{{ item }}</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Future Projects -->
-  <section class="projects-section">
-    <h3>Proyectos Futuros</h3>
-    <p class="section-subtitle">Lo que está por venir</p>
-    
-    <div class="projects-grid">
-      <div class="project-card" *ngFor="let project of futureProjects">
-        <h4>{{ project.area }}</h4>
-        <ul>
-          <li *ngFor="let item of project.items">{{ item }}</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
+  </ng-container>
 
 </div>

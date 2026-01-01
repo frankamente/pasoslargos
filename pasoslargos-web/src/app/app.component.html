@@ -6,7 +6,13 @@
     </div>
     <ul class="nav-links">
       <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
-      <li><a routerLink="/actividades" routerLinkActive="active">Actividades</a></li>
+      <li class="dropdown">
+        <a routerLink="/actividades" routerLinkActive="active">Actividades</a>
+        <div class="dropdown-content">
+          <a [routerLink]="['/actividades']" [queryParams]="{section: 'proximas-rutas'}">Próximas Rutas</a>
+          <a [routerLink]="['/actividades']" [queryParams]="{section: 'nuestras-actividades'}">Nuestras Actividades</a>
+        </div>
+      </li>
       <li class="dropdown">
         <a routerLink="/sobre-nosotros" routerLinkActive="active" [queryParams]="{section: 'informacion'}">Sobre Nosotros</a>
         <div class="dropdown-content">
