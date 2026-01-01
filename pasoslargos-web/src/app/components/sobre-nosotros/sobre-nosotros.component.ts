@@ -35,6 +35,15 @@ export class SobreNosotrosComponent implements OnInit {
     'Siguiendo ese espíritu, la Asociación tiene entre sus fines conocer, estudiar y divulgar los valores paisajísticos, geológicos y botánicos —principalmente de la Serranía de Ronda—, así como organizar y realizar itinerarios y rutas, preferentemente en la Comunidad Autónoma Andaluza. Llamarnos así es recordar que el sendero no es solo distancia, sino descubrimiento; que caminar es una forma de escuchar la naturaleza y reconocernos en ella. Pasos Largos simboliza, en definitiva, la unión entre el ser humano y el paisaje: el arte de andar con el alma abierta y los sentidos atentos a la voz del monte.'
   ];
 
+  queHacemos = [
+    'En Pasos Largos mantenemos viva la vocación de acercar la naturaleza, el deporte y la convivencia a quienes comparten con nosotros el amor por la montaña.',
+    'A lo largo del año organizamos numerosas actividades que combinan aventura, conocimiento y respeto por el entorno: rutas de senderismo y montañismo, descensos de barrancos, vías ferratas y salidas de espeleología, disciplina en la que nuestro equipo desarrolla una importante labor de estudio y exploración de simas y cavidades.',
+    'La Serranía de Ronda es nuestro territorio natural y el corazón de la mayoría de nuestras rutas, aunque también recorremos otros parajes de la geografía andaluza e incluso más allá de sus límites. En cada temporada, nuestras actividades se abren tanto a socios como a todas aquellas personas que deseen descubrir el paisaje desde la mirada tranquila del caminante.',
+    'También colaboramos con otras asociaciones, clubes y entidades para alcanzar objetivos comunes: la defensa de los caminos públicos, la protección del medio ambiente y la limpieza y mantenimiento de los sistemas subterráneos de la Serranía. Estas alianzas nos permiten compartir experiencias, intercambiar conocimiento y estrechar lazos entre los pueblos de nuestra tierra, organizando actividades conjuntas que unen deporte, cultura y respeto por el patrimonio.'
+  ];
+
+  queHacemosFooter = 'Actualmente, la Asociación cuenta con 127 federados en la Federación Andaluza de Deportes de Montaña, Escalada y Senderismo y 16 federados en la Federación de Espeleología, una muestra del compromiso y la pasión que definen a este colectivo. Semana tras semana, nuestros senderistas recorren los caminos, veredas y montes de la Serranía, fortaleciendo ese vínculo con la naturaleza que nos inspira y nos da sentido.';
+
   coveredSports = [
     'Excursiones',
     'Senderismo',

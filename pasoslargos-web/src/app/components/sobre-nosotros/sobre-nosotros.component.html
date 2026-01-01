@@ -62,13 +62,7 @@
       <div class="text-columns">
         <div class="col-left">
           <p class="history-text text-justify">
-            <!-- Bold "Pasos Largos" in the first sentence manually or just standard text for now -->
-            <span class="first-letter">L</span>a Asociación Senderista <strong>Pasos Largos</strong> nació en 1996 y, desde entonces, forma parte activa de la vida rondeña y de la Serranía... (rest of text injected dynamically below to avoid dupes if possible, but hardcoding styling for specific bolding as per image).
-            <!-- Actually, let's use the variable but we can't easily bold inside {{}}. 
-                 I'll just render the text from variable for now, or if precise bolding is needed, I'd have to parse it. 
-                 For this "appearance" task, I will stick to the variable to be safe on content, 
-                 unless the user *really* wants the bolding "Pasos Largos". 
-                 The variable content matches the image text. -->
+            <span class="first-letter">L</span>a Asociación Senderista <strong>Pasos Largos</strong> nació en 1996 y, desde entonces, forma parte activa de la vida rondeña y de la Serranía... 
             {{ nuestraHistoria[0] }}
           </p>
           
@@ -82,6 +76,46 @@
             {{ para }}
           </p>
         </div>
+      </div>
+    </div>
+
+    <!-- NEW SECTION: Qué Hacemos -->
+    <div class="que-hacemos-section">
+      <div class="que-hacemos-grid">
+        
+        <!-- Top Left Text Block -->
+        <div class="qh-text-block white-text area-tl">
+          <p>{{ queHacemos[0] }}</p>
+        </div>
+
+        <!-- Middle Left Text Block -->
+        <div class="qh-text-block white-text area-ml">
+          <p>{{ queHacemos[1] }}</p>
+        </div>
+
+        <!-- Image & Title Container (Top Right) -->
+        <div class="qh-image-container area-img">
+          <div class="qh-title-overlay">
+            <h1>QUÉ HACEMOS</h1>
+          </div>
+          <img src="quehacemos.jpg" alt="Actividades Pasos Largos" class="qh-main-img">
+        </div>
+
+        <!-- Bottom Left White Card -->
+        <div class="qh-white-card area-bl">
+          <p>{{ queHacemos[2] }}</p>
+        </div>
+
+        <!-- Bottom Right Text Block -->
+        <div class="qh-text-block white-text area-br">
+          <p>{{ queHacemos[3] }}</p>
+        </div>
+
+      </div>
+
+      <!-- Footer Text -->
+      <div class="qh-footer">
+        <p>{{ queHacemosFooter }}</p>
       </div>
     </div>
 

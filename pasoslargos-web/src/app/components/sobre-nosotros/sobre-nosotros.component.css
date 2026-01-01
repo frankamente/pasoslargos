@@ -94,8 +94,9 @@
   text-align: justify;
 }
 
-/* --- History Section (New) --- */
+/* --- History Section --- */
 .history-section {
+  margin-top: 50px;
   padding: 60px 10%;
   background-color: white;
   color: #1a1a1a;
@@ -109,7 +110,6 @@
   align-items: start;
 }
 
-/* Portrait Cropping trick */
 .portrait-col {
   display: flex;
   justify-content: center;
@@ -135,7 +135,7 @@
 }
 
 .main-title h1 {
-  font-family: 'Bodoni Moda', serif; /* Or similar tall serif */
+  font-family: 'Bodoni Moda', serif;
   font-size: 5rem;
   line-height: 0.85;
   margin: 0;
@@ -152,7 +152,7 @@
 }
 
 .quote-box {
-  background-color: #fcf4d9; /* Beige */
+  background-color: #fcf4d9;
   padding: 30px;
   text-align: center;
   margin-top: 20px;
@@ -160,7 +160,7 @@
 }
 
 .quote-box p {
-  font-family: 'Courier New', monospace; /* Typewriter style */
+  font-family: 'Courier New', monospace;
   font-size: 1.2rem;
   font-style: italic;
   margin: 0;
@@ -195,6 +195,134 @@
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/* --- Qué Hacemos Section (NEW) --- */
+.que-hacemos-section {
+  margin-top: 50px;
+  background-color: #4aaa8d; /* Same Teal Green */
+  padding: 60px 10%;
+  color: white;
+}
+
+.que-hacemos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  margin-bottom: 40px;
+  grid-template-areas:
+    "text1 image"
+    "text2 image"
+    "card text4";
+}
+
+/* Image Column Logic: The image in the reference is top-right */
+.area-img {
+  grid-area: image;
+  position: relative;
+  /* Shift image up to break boundary if desired, or keep contained. 
+     Reference shows image starting high. */
+  margin-top: -80px; 
+}
+
+/* Crop/Style the image to match the group photo look */
+.qh-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  /* Since we are using the full infographic image as the source, 
+     we might be displaying text-inside-image again if not careful.
+     Ideally, we crop just the photo part. 
+     I'll use object-fit to try and crop to the group photo part if possible, 
+     or just display it. Given it's a composite jpg, 
+     I will assume the user wants the photo part. */
+  object-fit: cover;
+  /* Tricky without a separate image file. 
+     If the file provided is the whole infographic, I should use background-image to crop it. */
+  /* Re-implementing as background div for better cropping control */
+  display: none; /* Hiding img tag, using div background below */
+}
+
+.qh-image-container {
+  margin-top: -13px;
+  grid-area: image;
+  position: relative;
+  height: 246px; /* Fixed height to match approx aspect ratio */
+  width: 420px;
+  background-image: url('/quehacemos.jpg');
+  /* Approximate crop to show the group photo part of the image provided */
+  background-position: top right; /* The photo is usually at the top or side */
+  background-size: cover; 
+  /* Actually, looking at the provided image (binary read), it's a full layout.
+     The group photo is in the top/middle right. 
+     I'll try to center on the group. */
+  background-position: 100% 30%; 
+  background-size: 150%; 
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.qh-title-overlay {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  background-color: #4aaa8d;
+  padding: 10px 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.qh-title-overlay h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5rem;
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.qh-text-block {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.area-tl { grid-area: text1; }
+.area-ml { grid-area: text2; }
+.area-br { grid-area: text4; align-self: start; }
+
+.qh-white-card {
+  grid-area: card;
+  background-color: white;
+  color: #333;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.qh-footer {
+  background-color: #2e6b5e; /* Darker green shade */
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 4px;
+}
+
+.qh-footer p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  font-style: italic;
+}
+
+.qh-footer p a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* --- Registries --- */
@@ -267,42 +395,23 @@ th {
 
 /* Responsive Tweaks */
 @media (max-width: 900px) {
+  .que-hacemos-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "image"
+      "text1"
+      "text2"
+      "card"
+      "text4";
+  }
+  
+  .qh-image-container {
+    min-height: 300px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  
   .history-grid {
     grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .header-col {
-    text-align: center;
-  }
-  
-  .text-columns {
-    grid-template-columns: 1fr;
-  }
-  
-  .portrait-crop {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .overlay-title h1 {
-    font-size: 2.5rem;
-  }
-  
-  .essence-title {
-    font-size: 2.5rem;
-  }
-  
-  .green-content, .history-section {
-    padding: 30px 5%;
-  }
-  
-  .text-card {
-    padding: 20px;
-  }
-  
-  .main-title h1 {
-    font-size: 3.5rem;
   }
 }
