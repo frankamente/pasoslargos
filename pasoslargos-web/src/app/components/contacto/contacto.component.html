@@ -1,54 +1,29 @@
 <div class="contacto-container">
   <h2>Contacto</h2>
-
-  <section class="info-contacto">
-    <p>
-      ¿Quieres unirte a nuestra asociación o participar en nuestras actividades? 
-      Contáctanos a través de los siguientes medios:
-    </p>
-
-    <div class="contact-info">
-      <div class="contact-item">
-        <h4>📧 Email</h4>
-        <p>info&#64;pasoslargos.org</p>
-      </div>
-
-      <div class="contact-item">
-        <h4>📱 Teléfono</h4>
-        <p>+34 XXX XXX XXX</p>
-      </div>
-
-      <div class="contact-item">
-        <h4>📍 Ubicación</h4>
-        <p>Tu ciudad, España</p>
-      </div>
-
-      <div class="contact-item">
-        <h4>🌐 Redes Sociales</h4>
-        <p>Síguenos en nuestras redes para estar al día de nuestras actividades</p>
-      </div>
+  
+  <div class="contact-card">
+    <div class="contact-item">
+      <h3><i class="fas fa-envelope"></i> Correo Electrónico</h3>
+      <p><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></p>
     </div>
-  </section>
 
-  <section class="formulario-section">
-    <h3>Envíanos un mensaje</h3>
-    <form class="contact-form">
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-      </div>
+    <div class="contact-item">
+      <h3><i class="fas fa-map-marker-alt"></i> Dirección Postal</h3>
+      <p>{{ contactInfo.address }}</p>
+    </div>
 
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
+    <div class="contact-item">
+      <h3><i class="fas fa-globe"></i> Sitios Web</h3>
+      <ul>
+        <li *ngFor="let site of contactInfo.websites">
+          <a href="http://{{ site }}" target="_blank">{{ site }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <div class="form-group">
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit">Enviar</button>
-    </form>
-  </section>
+  <div class="map-placeholder">
+    <p>Ronda, Málaga</p>
+    <!-- Placeholder for map -->
+  </div>
 </div>

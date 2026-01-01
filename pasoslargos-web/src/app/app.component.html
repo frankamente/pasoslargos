@@ -1,13 +1,19 @@
 <header>
   <nav class="navbar">
-    <div class="logo-container">
+    <div class="logo-container" routerLink="/home">
       <img src="logo.png" alt="Pasos Largos Logo" class="logo">
       <h1>{{ title }}</h1>
     </div>
     <ul class="nav-links">
       <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
       <li><a routerLink="/actividades" routerLinkActive="active">Actividades</a></li>
-      <li><a routerLink="/sobre-nosotros" routerLinkActive="active">Sobre Nosotros</a></li>
+      <li class="dropdown">
+        <a routerLink="/sobre-nosotros" routerLinkActive="active" [queryParams]="{section: 'informacion'}">Sobre Nosotros</a>
+        <div class="dropdown-content">
+          <a [routerLink]="['/sobre-nosotros']" [queryParams]="{section: 'informacion'}">Información</a>
+          <a [routerLink]="['/sobre-nosotros']" [queryParams]="{section: 'tarifas'}">Tarifas</a>
+        </div>
+      </li>
       <li><a routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
     </ul>
   </nav>

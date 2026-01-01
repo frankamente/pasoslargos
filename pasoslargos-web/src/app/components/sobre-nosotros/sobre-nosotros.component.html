@@ -1,43 +1,83 @@
 <div class="sobre-nosotros-container">
-  <h2>Sobre Nosotros</h2>
+  
+  <!-- Persistent Header with Title & Dropdown -->
+  <div class="page-header">
+    <h2>{{ identity.name }}</h2>
+    <h3 class="subtitle">{{ identity.specialization }}</h3>
+  </div>
 
-  <section class="historia">
-    <h3>Historia</h3>
-    <p class="historia-text">{{ historia }}</p>
-  </section>
-
-  <section class="tarifas">
-    <h3>Tarifas 2026</h3>
-    <p class="disclaimer">Las licencias incluyen la cuota de socio de Pasos Largos. Suplemento de 5€ para tramitaciones posteriores al 1 de febrero.</p>
-    
-    <div class="table-responsive">
-      <table>
-        <thead>
-          <tr>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Cobertura</th>
-            <th>Actividades</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let tarifa of tarifas">
-            <td>{{ tarifa.category }}</td>
-            <td class="price">{{ tarifa.price }}</td>
-            <td>{{ tarifa.coverage }}</td>
-            <td>{{ tarifa.activities }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Información Section -->
+  <div class="section-content" *ngIf="activeSection === 'informacion'">
+    <!-- Remaining Identity Details -->
+    <div class="identity-details">
+      <p class="location"><i class="fas fa-map-marker-alt"></i> {{ identity.location }}</p>
+      <blockquote class="motto">"{{ identity.motto }}"</blockquote>
+      <div class="main-image">
+        <img src="sobrenosotros.png" alt="Sobre Nosotros" class="img-responsive">
+      </div>
     </div>
 
-    <div class="other-fees">
-      <h4>Otras Cuotas</h4>
+    <!-- Philosophy & History -->
+      <section class="history">
+        <h3>Nuestra Esencia</h3>
+        <p class="history-text">{{ history }}</p>
+      </section>
+
+    <!-- Registries -->
+    <section class="registries">
+      <h3>Registros Oficiales</h3>
       <ul>
-        <li *ngFor="let fee of otherFees">
-          <strong>{{ fee.description }}:</strong> {{ fee.price }}
-        </li>
+        <li *ngFor="let reg of registries">{{ reg }}</li>
       </ul>
-    </div>
-  </section>
+    </section>
+  </div>
+
+  <!-- Tarifas Section -->
+  <div class="section-content" *ngIf="activeSection === 'tarifas'">
+    <section class="tarifas">
+      <h3>Tarifas 2026</h3>
+      <p class="disclaimer">Las licencias incluyen la cuota de socio de Pasos Largos. Suplemento de 5€ para tramitaciones posteriores al 1 de febrero.</p>
+      
+      <!-- Covered Sports List -->
+      <div class="covered-sports">
+        <h4>Modalidades Deportivas Cubiertas</h4>
+        <p class="sports-intro">Dependiendo de la modalidad de licencia, se cubren las siguientes actividades:</p>
+        <div class="sports-tags">
+          <span class="sport-tag" *ngFor="let sport of coveredSports">{{ sport }}</span>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Cobertura</th>
+              <th>Actividades</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tarifa of tarifas">
+              <td>{{ tarifa.category }}</td>
+              <td class="price">{{ tarifa.price }}</td>
+              <td>{{ tarifa.coverage }}</td>
+              <td>{{ tarifa.activities }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="other-fees">
+        <h4>Otras Cuotas</h4>
+        <ul>
+          <li *ngFor="let fee of otherFees">
+            <strong>{{ fee.description }}:</strong> {{ fee.price }} 
+            <span class="fee-note" *ngIf="fee.note">({{ fee.note }})</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
 </div>

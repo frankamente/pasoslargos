@@ -1,30 +1,25 @@
 <div class="home-container">
-  <section class="hero">
-    <h2>Bienvenidos a Pasos Largos</h2>
-    <p class="subtitle">Asociación de Senderismo y Espeleología</p>
-  </section>
-
-  <section class="description">
-    <h3>Quiénes Somos</h3>
-    <p>
-      Somos una asociación dedicada a la exploración de la naturaleza a través del senderismo 
-      y la espeleología. Nuestro objetivo es compartir la pasión por el montañismo, las rutas 
-      naturales y el descubrimiento de cuevas y formaciones subterráneas.
-    </p>
-  </section>
+  <div class="hero">
+    <h1>{{ motto }}</h1>
+    <p class="subtitle">{{ intro }}</p>
+    <div class="cta-buttons">
+      <a routerLink="/actividades" class="btn btn-primary">Ver Actividades 2025</a>
+      <a routerLink="/sobre-nosotros" class="btn btn-secondary">Conócenos</a>
+    </div>
+  </div>
 
   <section class="features">
-    <div class="feature-card">
-      <h4>🥾 Senderismo</h4>
-      <p>Rutas guiadas por paisajes espectaculares</p>
+    <div class="feature">
+      <h3>Senderismo</h3>
+      <p>Rutas por la Serranía de Ronda y más allá.</p>
     </div>
-    <div class="feature-card">
-      <h4>🔦 Espeleología</h4>
-      <p>Exploración de cuevas y cavidades</p>
+    <div class="feature">
+      <h3>Espeleología</h3>
+      <p>Exploración de simas y cuevas con el Espeleoclub.</p>
     </div>
-    <div class="feature-card">
-      <h4>🌲 Naturaleza</h4>
-      <p>Respeto y conservación del medio ambiente</p>
+    <div class="feature">
+      <h3>Solidaridad</h3>
+      <p>Compromiso social y voluntariado ambiental.</p>
     </div>
   </section>
 </div>

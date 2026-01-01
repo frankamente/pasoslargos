@@ -1,11 +1,41 @@
 <div class="actividades-container">
-  <h2>Nuestras Actividades</h2>
-
-  <section class="actividad" *ngFor="let activity of activities">
-    <h3>{{ activity.title }}</h3>
-    <p>{{ activity.description }}</p>
-    <ul *ngIf="activity.details && activity.details.length > 0">
-      <li *ngFor="let detail of activity.details">{{ detail }}</li>
-    </ul>
+  
+  <!-- Main Activities -->
+  <section class="intro-activities">
+    <h2>Nuestras Actividades</h2>
+    <div class="tags-container">
+      <span class="activity-tag" *ngFor="let activity of mainActivities">{{ activity }}</span>
+    </div>
   </section>
+
+  <!-- Timeline 2025 -->
+  <section class="timeline-section">
+    <h3>Memoria de Actividades 2025</h3>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let monthItem of timeline2025">
+        <div class="timeline-content">
+          <div class="month-badge">{{ monthItem.month }}</div>
+          <ul class="event-list">
+            <li *ngFor="let event of monthItem.events">{{ event }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Projects -->
+  <section class="projects-section">
+    <h3>Proyectos Futuros</h3>
+    <p class="section-subtitle">Lo que está por venir</p>
+    
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of futureProjects">
+        <h4>{{ project.area }}</h4>
+        <ul>
+          <li *ngFor="let item of project.items">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
 </div>
