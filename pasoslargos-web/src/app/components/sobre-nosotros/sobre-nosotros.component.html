@@ -1,0 +1,43 @@
+<div class="sobre-nosotros-container">
+  <h2>Sobre Nosotros</h2>
+
+  <section class="historia">
+    <h3>Historia</h3>
+    <p class="historia-text">{{ historia }}</p>
+  </section>
+
+  <section class="tarifas">
+    <h3>Tarifas 2026</h3>
+    <p class="disclaimer">Las licencias incluyen la cuota de socio de Pasos Largos. Suplemento de 5€ para tramitaciones posteriores al 1 de febrero.</p>
+    
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Cobertura</th>
+            <th>Actividades</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarifa of tarifas">
+            <td>{{ tarifa.category }}</td>
+            <td class="price">{{ tarifa.price }}</td>
+            <td>{{ tarifa.coverage }}</td>
+            <td>{{ tarifa.activities }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="other-fees">
+      <h4>Otras Cuotas</h4>
+      <ul>
+        <li *ngFor="let fee of otherFees">
+          <strong>{{ fee.description }}:</strong> {{ fee.price }}
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

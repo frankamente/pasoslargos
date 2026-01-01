@@ -1,38 +1,11 @@
 <div class="actividades-container">
   <h2>Nuestras Actividades</h2>
 
-  <section class="actividad">
-    <h3>Salidas de Senderismo</h3>
-    <p>
-      Organizamos rutas de diferentes niveles de dificultad, desde paseos familiares 
-      hasta trekkings de alta montaña. Todas nuestras salidas están guiadas por monitores 
-      experimentados.
-    </p>
-    <ul>
-      <li>Rutas de iniciación (5-10 km)</li>
-      <li>Rutas de nivel medio (10-20 km)</li>
-      <li>Rutas de nivel avanzado (>20 km)</li>
+  <section class="actividad" *ngFor="let activity of activities">
+    <h3>{{ activity.title }}</h3>
+    <p>{{ activity.description }}</p>
+    <ul *ngIf="activity.details && activity.details.length > 0">
+      <li *ngFor="let detail of activity.details">{{ detail }}</li>
     </ul>
-  </section>
-
-  <section class="actividad">
-    <h3>Expediciones Espeleológicas</h3>
-    <p>
-      Exploramos cuevas y sistemas subterráneos con todo el equipo de seguridad necesario. 
-      Nuestras actividades incluyen formación en técnicas de progresión vertical y horizontal.
-    </p>
-    <ul>
-      <li>Iniciación a la espeleología</li>
-      <li>Descenso de simas y pozos</li>
-      <li>Exploración de cavidades</li>
-    </ul>
-  </section>
-
-  <section class="actividad">
-    <h3>Talleres y Formación</h3>
-    <p>
-      Realizamos talleres de orientación, primeros auxilios en montaña, fotografía de 
-      naturaleza y cursos de formación en técnicas de progresión.
-    </p>
   </section>
 </div>
