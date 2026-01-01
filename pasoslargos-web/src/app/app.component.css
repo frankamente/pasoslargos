@@ -70,6 +70,7 @@ header {
   overflow: hidden; /* For border radius */
   top: 100%; /* Position right below the parent */
   left: 0;
+  white-space: nowrap;
 }
 
 .dropdown-content a {

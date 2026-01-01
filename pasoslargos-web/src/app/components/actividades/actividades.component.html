@@ -19,18 +19,16 @@
   </ng-container>
 
   <ng-container *ngIf="activeSection === 'proximas-rutas'">
-    <!-- Future Projects -->
-    <section class="projects-section">
-      <h3>Proyectos Futuros</h3>
-      <p class="section-subtitle">Lo que está por venir</p>
+    <!-- Próximas Rutas -->
+    <section class="proximas-rutas-section" style="text-align: center;">
+      <h2>Próximas Rutas</h2>
       
-      <div class="projects-grid">
-        <div class="project-card" *ngFor="let project of futureProjects">
-          <h4>{{ project.area }}</h4>
-          <ul>
-            <li *ngFor="let item of project.items">{{ item }}</li>
-          </ul>
-        </div>
+      <div class="image-container" style="margin-bottom: 20px;">
+        <img src="/proximaRuta.jpg" alt="Próximas Rutas" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      </div>
+
+      <div class="calendar-container" style="margin-top: 30px;">
+        <iframe src="https://calendar.google.com/calendar/embed?src=pasoslargosinformacion%40gmail.com&ctz=Europe%2FMadrid" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
     </section>
   </ng-container>
