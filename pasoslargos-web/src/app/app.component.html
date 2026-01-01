@@ -4,23 +4,40 @@
       <img src="logo.png" alt="Pasos Largos Logo" class="logo">
       <h1>{{ title }}</h1>
     </div>
-    <ul class="nav-links">
-      <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
+    
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/home" routerLinkActive="active" (click)="isMenuOpen = false">Inicio</a></li>
       <li class="dropdown">
-        <a routerLink="/actividades" routerLinkActive="active">Actividades</a>
-        <div class="dropdown-content">
-          <a [routerLink]="['/actividades']" [queryParams]="{section: 'proximas-rutas'}">Próximas Rutas</a>
-          <a [routerLink]="['/actividades']" [queryParams]="{section: 'nuestras-actividades'}">Nuestras Actividades</a>
+        <div class="link-with-toggle">
+          <a routerLink="/actividades" routerLinkActive="active" (click)="isMenuOpen = false">Actividades</a>
+          <button class="submenu-toggle" (click)="toggleSubmenu('actividades', $event)">
+            <span [class.rotated]="activeSubmenu === 'actividades'">▼</span>
+          </button>
+        </div>
+        <div class="dropdown-content" [class.show-mobile]="activeSubmenu === 'actividades'">
+          <a [routerLink]="['/actividades']" [queryParams]="{section: 'proximas-rutas'}" (click)="isMenuOpen = false">Próximas Rutas</a>
+          <a [routerLink]="['/actividades']" [queryParams]="{section: 'nuestras-actividades'}" (click)="isMenuOpen = false">Nuestras Actividades</a>
         </div>
       </li>
       <li class="dropdown">
-        <a routerLink="/sobre-nosotros" routerLinkActive="active" [queryParams]="{section: 'informacion'}">Sobre Nosotros</a>
-        <div class="dropdown-content">
-          <a [routerLink]="['/sobre-nosotros']" [queryParams]="{section: 'informacion'}">Información</a>
-          <a [routerLink]="['/sobre-nosotros']" [queryParams]="{section: 'tarifas'}">Tarifas</a>
+        <div class="link-with-toggle">
+          <a routerLink="/sobre-nosotros" routerLinkActive="active" [queryParams]="{section: 'informacion'}" (click)="isMenuOpen = false">Sobre Nosotros</a>
+          <button class="submenu-toggle" (click)="toggleSubmenu('sobre-nosotros', $event)">
+            <span [class.rotated]="activeSubmenu === 'sobre-nosotros'">▼</span>
+          </button>
+        </div>
+        <div class="dropdown-content" [class.show-mobile]="activeSubmenu === 'sobre-nosotros'">
+          <a [routerLink]="['/sobre-nosotros']" [queryParams]="{section: 'informacion'}" (click)="isMenuOpen = false">Información</a>
+          <a [routerLink]="['/sobre-nosotros']" [queryParams]="{section: 'tarifas'}" (click)="isMenuOpen = false">Tarifas</a>
         </div>
       </li>
-      <li><a routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
+      <li><a routerLink="/contacto" routerLinkActive="active" (click)="isMenuOpen = false">Contacto</a></li>
     </ul>
   </nav>
 </header>

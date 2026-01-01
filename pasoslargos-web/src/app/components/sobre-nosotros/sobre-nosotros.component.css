@@ -121,7 +121,6 @@
   height: 400px; /* Oval shape ratio */
   border-radius: 45%; /* Approximate oval */
   background-image: url('/nuestraHistoria.jpg');
-  /* Adjust these values to zoom in on the face */
   background-size: 158%; 
   background-position: 43% 2%; 
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -217,47 +216,28 @@
     "card text4";
 }
 
-/* Image Column Logic: The image in the reference is top-right */
 .area-img {
   grid-area: image;
   position: relative;
-  /* Shift image up to break boundary if desired, or keep contained. 
-     Reference shows image starting high. */
   margin-top: -80px; 
 }
 
-/* Crop/Style the image to match the group photo look */
 .qh-main-img {
   width: 100%;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  /* Since we are using the full infographic image as the source, 
-     we might be displaying text-inside-image again if not careful.
-     Ideally, we crop just the photo part. 
-     I'll use object-fit to try and crop to the group photo part if possible, 
-     or just display it. Given it's a composite jpg, 
-     I will assume the user wants the photo part. */
   object-fit: cover;
-  /* Tricky without a separate image file. 
-     If the file provided is the whole infographic, I should use background-image to crop it. */
-  /* Re-implementing as background div for better cropping control */
-  display: none; /* Hiding img tag, using div background below */
+  display: none; 
 }
 
 .qh-image-container {
   margin-top: -13px;
   grid-area: image;
   position: relative;
-  height: 246px; /* Fixed height to match approx aspect ratio */
+  height: 246px; 
   width: 420px;
   background-image: url('/quehacemos.jpg');
-  /* Approximate crop to show the group photo part of the image provided */
-  background-position: top right; /* The photo is usually at the top or side */
-  background-size: cover; 
-  /* Actually, looking at the provided image (binary read), it's a full layout.
-     The group photo is in the top/middle right. 
-     I'll try to center on the group. */
   background-position: 100% 30%; 
   background-size: 150%; 
   border-radius: 4px;
@@ -395,6 +375,15 @@ th {
 
 /* Responsive Tweaks */
 @media (max-width: 900px) {
+  .green-content, .history-section, .que-hacemos-section {
+    padding: 30px 5%; /* Reduced padding */
+  }
+
+  .text-columns, .history-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
   .que-hacemos-grid {
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -406,12 +395,68 @@ th {
   }
   
   .qh-image-container {
-    min-height: 300px;
-    margin-top: 0;
+    width: 100%; /* Fluid width */
+    max-width: 420px;
+    height: 250px;
+    margin: 0 auto 40px auto; /* Center */
+  }
+
+  .portrait-col {
+    order: 2; /* Put image after text if desired, or keep before */
     margin-bottom: 30px;
   }
   
-  .history-grid {
-    grid-template-columns: 1fr;
+  .portrait-crop {
+    width: 250px;
+    height: 333px; /* Keep aspect ratio */
+  }
+
+  .header-col {
+    text-align: center;
+  }
+
+  /* Font Sizes for Mobile */
+  .overlay-title h1 {
+    font-size: 2rem;
+  }
+  
+  .essence-title {
+    font-size: 2.5rem;
+  }
+  
+  .main-title h1 {
+    font-size: 3.5rem;
+  }
+  
+  .cursive-subtitle {
+    font-size: 2.5rem;
+  }
+  
+  .qh-title-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .text-card {
+    padding: 20px;
+  }
+  
+  .qh-white-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay-title {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: -5px;
+  }
+
+  .portrait-crop {
+    width: 200px;
+    height: 266px;
   }
 }
