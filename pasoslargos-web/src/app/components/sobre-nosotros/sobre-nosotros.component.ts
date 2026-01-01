@@ -44,19 +44,6 @@ export class SobreNosotrosComponent implements OnInit {
 
   queHacemosFooter = 'Actualmente, la Asociación cuenta con 127 federados en la Federación Andaluza de Deportes de Montaña, Escalada y Senderismo y 16 federados en la Federación de Espeleología, una muestra del compromiso y la pasión que definen a este colectivo. Semana tras semana, nuestros senderistas recorren los caminos, veredas y montes de la Serranía, fortaleciendo ese vínculo con la naturaleza que nos inspira y nos da sentido.';
 
-  coveredSports = [
-    'Excursiones',
-    'Senderismo',
-    'Escalada',
-    'Vias Ferratas',
-    'Alpinismo',
-    'Esquí de Travesía',
-    'Descenso de Barrancos',
-    'Acampadas Alpinísticas',
-    'Raquetas de Nieve',
-    'Marcha'
-  ];
-
   registries = [
     'Registro Provincial de Asociaciones: Nº 3.697, Sección 1ª',
     'Registro Andaluz de Entidades Deportivas: Nº 12.862',
