@@ -17,21 +17,23 @@ export class SobreNosotrosComponent implements OnInit {
     motto: 'Donde la naturaleza esculpe el alma'
   };
 
-  history = `En Pasos Largos nacemos del amor por los caminos que se adentran en la montaña y por
-las sendas que revelan la vida secreta del paisaje. Encontramos en el paso lento una forma
-de descubrir, comprender y cuidar la naturaleza que nos rodea. En cada recorrido
-buscamos algo más que llegar: buscamos sentir, aprender y volver distintos.
-Entendemos el senderismo como una manera de estar en el mundo: con curiosidad,
-humildad y gratitud. Nos une el deseo profundo de contemplar, comprender y proteger la
-naturaleza, especialmente la riqueza paisajística y vital de la Serranía de Ronda, el lugar
-que nos inspira y nos da identidad.
-Caminar nos enseña a mirar con otros ojos. Nacemos del anhelo de conocer y compartir la
-belleza natural que nos rodea, de escuchar el lenguaje de las montañas, los ríos y los
-bosques, y de aprender a protegerlos. Creemos en el poder de la admiración: esa emoción
-que nace al mirar un horizonte y recordar que formamos parte de algo mucho más grande.
-Nuestra esencia es el respeto por el entorno y la convicción de que cada paso puede ser un
-acto de cuidado. Queremos difundir el valor del paisaje y de la vida que lo habita, impulsar
-la educación ambiental y practicar un senderismo que deje huella solo en la memoria.`;
+  history = [
+    'En Pasos Largos nacemos del amor por los caminos que se adentran en la montaña y por las sendas que revelan la vida secreta del paisaje. Encontramos en el paso lento una forma de descubrir, comprender y cuidar la naturaleza que nos rodea. En cada recorrido buscamos algo más que llegar: buscamos sentir, aprender y volver distintos. Entendemos el senderismo como una manera de estar en el mundo: con curiosidad, humildad y gratitud. Nos une el deseo profundo de contemplar, comprender y proteger la naturaleza, especialmente la riqueza paisajística y vital de la Serranía de Ronda, el lugar que nos inspira y nos da identidad.',
+    'Caminar nos enseña a mirar con otros ojos. Nacemos del anhelo de conocer y compartir la belleza natural que nos rodea, de escuchar el lenguaje de las montañas, los ríos y los bosques, y de aprender a protegerlos. Creemos en el poder de la admiración: esa emoción que nace al mirar un horizonte y recordar que formamos parte de algo mucho más grande.',
+    'Nuestra esencia es el respeto por el entorno y la convicción de que cada paso puede ser un acto de cuidado. Queremos difundir el valor del paisaje y de la vida que lo habita, impulsar la educación ambiental y practicar un senderismo que deje huella solo en la memoria.'
+  ];
+
+  nuestraHistoria = [
+    'La Asociación Senderista Pasos Largos nació en 1996 y, desde entonces, forma parte activa de la vida rondeña y de la Serranía, tanto en el ámbito social como en el deportivo. Lleva el nombre Pasos Largos en homenaje a Juan José Mingolla Gallardo, un hombre que encontró en la naturaleza su verdadero hogar. Habitante de la Serranía de Ronda, conocía sus montes, cañadas y barrancos como pocos: cada senda, cada recodo del río y cada rumor del viento le eran familiares. En aquellos paisajes de encinas y peñascos halló refugio, silencio y compañía; fue allí donde su vida se fundió con la montaña.',
+    'El nombre Pasos Largos evoca ese vínculo profundo con la tierra, con el caminar libre y el ritmo pausado del que sabe orientarse siguiendo la luz, el olor del tomillo o la forma de las nubes.'
+  ];
+
+  historyQuote = 'El arte de andar con el alma abierta y los sentidos atentos a la voz del monte';
+
+  historyRightCol = [
+    'Representa el espíritu de quien avanza sin perder el respeto por lo que pisa, de quien se deja guiar por los caminos antiguos y siente que en cada paso late algo vivo.',
+    'Siguiendo ese espíritu, la Asociación tiene entre sus fines conocer, estudiar y divulgar los valores paisajísticos, geológicos y botánicos —principalmente de la Serranía de Ronda—, así como organizar y realizar itinerarios y rutas, preferentemente en la Comunidad Autónoma Andaluza. Llamarnos así es recordar que el sendero no es solo distancia, sino descubrimiento; que caminar es una forma de escuchar la naturaleza y reconocernos en ella. Pasos Largos simboliza, en definitiva, la unión entre el ser humano y el paisaje: el arte de andar con el alma abierta y los sentidos atentos a la voz del monte.'
+  ];
 
   coveredSports = [
     'Excursiones',

@@ -1,362 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@400;700&family=Playfair+Display:ital@0;1&family=Bodoni+Moda:wght@400;700&display=swap');
+
 .sobre-nosotros-container {
-  padding: 10px;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
 }
 
-/* Page Header (Title + Nav) */
-.page-header {
-  text-align: center;
+/* --- Header Banner Section --- */
+.header-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay-title {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  background-color: #4aaa8d;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.overlay-title h1 {
+  margin: 0;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* --- Green Content Section --- */
+.green-content {
+  background-color: #4aaa8d;
+  padding: 40px 10%;
+  color: white;
+  position: relative;
+}
+
+.essence-title-container {
+  text-align: right;
   margin-bottom: 30px;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee; /* Optional subtle separation */
+  margin-top: -20px;
 }
 
-/* Navigation Dropdown Styling */
-.section-nav {
-  text-align: center;
-  margin-top: 20px; /* Space between subtitle and dropdown */
+.essence-title {
+  display: inline-block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1); 
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+
+.text-block {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.white-text {
+  color: white;
+}
+
+.text-card {
+  background-color: white;
+  padding: 30px 40px;
+  margin: 30px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.card-text {
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+}
+
+/* --- History Section (New) --- */
+.history-section {
+  padding: 60px 10%;
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: start;
+}
+
+/* Portrait Cropping trick */
+.portrait-col {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
+  align-items: flex-start;
 }
 
-.section-nav label {
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 1.1em;
+.portrait-crop {
+  width: 300px;
+  height: 400px; /* Oval shape ratio */
+  border-radius: 45%; /* Approximate oval */
+  background-image: url('/nuestraHistoria.jpg');
+  /* Adjust these values to zoom in on the face */
+  background-size: 300%; 
+  background-position: 20% 15%; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 4px solid #fff;
+  outline: 1px solid #ddd;
 }
 
-.select-wrapper {
-  position: relative;
-  display: inline-block;
-  min-width: 200px;
+.header-col {
+  text-align: right;
+  padding-top: 20px;
 }
 
-.select-wrapper select {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  font-size: 1em;
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #4CAF50;
-  border-radius: 8px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.main-title h1 {
+  font-family: 'Bodoni Moda', serif; /* Or similar tall serif */
+  font-size: 5rem;
+  line-height: 0.85;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -2px;
+  text-transform: uppercase;
 }
 
-.select-wrapper select:hover {
-  border-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.select-wrapper select:focus {
-  border-color: #2e7d32;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-}
-
-/* Custom arrow for dropdown */
-.select-wrapper::after {
-  content: '\25BC';
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  color: #4CAF50;
-  pointer-events: none;
-  font-size: 0.8em;
-}
-
-/* End Navigation Styling */
-
-h2 {
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 2.5em;
-  margin-top: 0;
-}
-
-.subtitle {
-  text-align: center;
-  color: #2e7d32;
+.cursive-subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  margin: 10px 0 30px 0;
   font-weight: normal;
-  margin-bottom: 10px;
 }
 
-section {
-  margin-bottom: 30px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-h3 {
-  color: #2c3e50;
-  border-bottom: 3px solid #4CAF50;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-/* Identity Details (Rest of info) */
-.identity-details {
+.quote-box {
+  background-color: #fcf4d9; /* Beige */
+  padding: 30px;
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.identity {
-  /* Legacy class kept just in case, but structure changed */
-  text-align: center;
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
-.motto {
-  font-style: italic;
-  font-size: 1.2em;
-  color: #555;
-  border-left: 4px solid #4CAF50;
-  padding-left: 15px;
-  margin: 20px auto;
-  max-width: 600px;
-  background: #f9f9f9;
-  padding: 20px;
+  margin-top: 20px;
   border-radius: 4px;
 }
 
-.location {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  text-align: center;
-  color: #2e7d32;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-section {
-  margin-bottom: 30px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-h3 {
-  color: #2c3e50;
-  border-bottom: 3px solid #4CAF50;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-/* Identity */
-.identity {
-  text-align: center;
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
-.motto {
+.quote-box p {
+  font-family: 'Courier New', monospace; /* Typewriter style */
+  font-size: 1.2rem;
   font-style: italic;
-  font-size: 1.2em;
-  color: #555;
-  border-left: 4px solid #4CAF50;
-  padding-left: 15px;
-  margin: 20px auto;
-  max-width: 600px;
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 4px;
+  margin: 0;
+  line-height: 1.6;
 }
 
-.location {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.main-image {
-  margin: 20px 0;
-  text-align: center;
-}
-
-.img-responsive {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Grid for Philosophy & History */
-.content-grid {
+.text-columns {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .content-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
 .history-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.highlight-box {
+  background-color: #fcf4d9;
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+
+.highlight-box p {
+  margin: 0;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #444;
 }
 
-/* Stats */
-.stats-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.stat-item {
-  text-align: center;
-  background: #e8f5e9;
+/* --- Registries --- */
+.registries {
+  margin: 40px 10%;
   padding: 20px;
-  border-radius: 8px;
-  min-width: 150px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #4aaa8d;
 }
 
-.stat-value {
-  display: block;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #2e7d32;
+.registries h3 {
+  color: #2c3e50;
+  margin-top: 0;
 }
 
-.stat-label {
-  color: #555;
-}
-
-/* Registries */
 .registries ul {
-  list-style-type: none; /* Removed bullet points */
+  list-style-type: none;
   padding: 0;
 }
 
 .registries li {
-  padding: 10px;
-  background: #f4f4f4;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  border-left: 4px solid #ccc;
+  margin-bottom: 10px;
+  color: #555;
 }
 
-/* Tarifas Table - Existing Styles Preserved/Enhanced */
+/* --- Tarifas Section --- */
+.tarifas {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .table-responsive {
   overflow-x: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 0;
-  min-width: 900px; /* Ensure table doesn't get too squashed on small screens */
   background: white;
 }
 
 th, td {
   text-align: left;
-  padding: 16px 12px;
+  padding: 12px;
   border-bottom: 1px solid #e0e0e0;
-  vertical-align: top;
 }
 
 th {
-  background-color: #2e7d32; /* Updated to darker green */
+  background-color: #2e7d32;
   color: white;
-  position: sticky;
-  top: 0;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  letter-spacing: 0.5px;
-  z-index: 10;
-}
-
-tr:nth-child(even) {
-  background-color: #f8f9fa;
-}
-
-tr:hover {
-  background-color: #f1f8e9;
-  transition: background-color 0.2s;
-}
-
-.price {
-  font-weight: 700;
-  color: #1b5e20;
-  font-size: 1.15em;
-  white-space: nowrap;
-}
-
-/* Specific column adjustments could go here if we had classes on TH/TD */
-td:first-child {
-  font-weight: 600;
-  color: #333;
-}
-
-.disclaimer {
-  font-style: italic;
-  color: #666;
-  margin-bottom: 15px;
 }
 
 .covered-sports {
-  margin-bottom: 25px;
-  background: #f9f9f9;
+  background: #f1f8e9;
   padding: 15px;
   border-radius: 8px;
-}
-
-.covered-sports h4 {
-  margin-top: 0;
-  color: #2e7d32;
-}
-
-.sports-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .sport-tag {
-  background: #fff;
-  border: 1px solid #c8e6c9;
-  color: #2e7d32;
-  padding: 4px 12px;
-  border-radius: 15px;
+  display: inline-block;
+  background: white;
+  border: 1px solid #81c784;
+  padding: 4px 10px;
+  margin: 2px;
+  border-radius: 12px;
   font-size: 0.9em;
 }
 
-.other-fees li {
-  padding: 8px 0;
-  border-bottom: 1px dashed #ccc;
-  list-style: none;
+/* Responsive Tweaks */
+@media (max-width: 900px) {
+  .history-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .header-col {
+    text-align: center;
+  }
+  
+  .text-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .portrait-crop {
+    margin: 0 auto;
+  }
 }
 
-.fee-note {
-  display: block;
-  font-size: 0.85em;
-  color: #666;
-  font-style: italic;
-  margin-top: 2px;
+@media (max-width: 768px) {
+  .overlay-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .essence-title {
+    font-size: 2.5rem;
+  }
+  
+  .green-content, .history-section {
+    padding: 30px 5%;
+  }
+  
+  .text-card {
+    padding: 20px;
+  }
+  
+  .main-title h1 {
+    font-size: 3.5rem;
+  }
 }
