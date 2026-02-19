@@ -3,56 +3,84 @@
 }
 
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/landscape.jpeg') no-repeat center center/cover;
-  background-color: #2c3e50;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/landscape.jpeg') no-repeat center center/cover;
+  background-color: var(--primary);
   color: white;
-  padding: 100px 20px;
-  border-radius: 20px;
-  margin-bottom: 40px;
+  padding: 120px 40px;
+  border-radius: 24px;
+  margin-bottom: 60px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-  font-size: 1.2em;
-  margin-bottom: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 650px;
+  opacity: 0.95;
+  font-weight: 400;
 }
 
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+  flex-wrap: wrap;
+  /* Allow wrapping on small screens */
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 30px;
+  padding: 14px 32px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-primary {
-  background-color: #4CAF50;
-  color: white;
+  background-color: var(--accent);
+  color: #1a2e1a;
+}
+
+.btn-primary:hover {
+  background-color: #a8cd73;
 }
 
 .btn-secondary {
-  background-color: transparent;
-  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
   color: white;
+  backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
 }
 
 .features {
@@ -64,24 +92,42 @@
 }
 
 .feature {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 250px;
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  width: 320px;
+  transition: all var(--transition-slow);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
 }
 
 .feature h3 {
-  color: #2e7d32;
-  margin-bottom: 10px;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.feature p {
+  color: var(--text-muted);
+  font-size: 1rem;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 20px; /* Reduced padding */
-    border-radius: 0; /* Remove border radius for full width feel or smaller radius */
-    margin: -20px -20px 30px -20px; /* Counteract container padding if needed, or just adjust */
+    padding: 60px 20px;
+    /* Reduced padding */
+    border-radius: 0;
+    /* Remove border radius for full width feel or smaller radius */
+    margin: -20px -20px 30px -20px;
+    /* Counteract container padding if needed, or just adjust */
     width: calc(100% + 40px);
   }
 
@@ -102,7 +148,8 @@
   }
 
   .feature {
-    width: 100%; /* Fluid width */
+    width: 100%;
+    /* Fluid width */
     max-width: 350px;
   }
 }

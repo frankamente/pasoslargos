@@ -1,0 +1,49 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5] [cursor=pointer]:
+        - img "Pasos Largos Logo" [ref=e6]
+        - heading "Pasos Largos" [level=1] [ref=e7]
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link [ref=e10] [cursor=pointer]:
+            - /url: /home
+            - text: Inicio
+        - listitem [ref=e11]:
+          - link [ref=e13] [cursor=pointer]:
+            - /url: /actividades
+            - text: Actividades
+        - listitem [ref=e14]:
+          - link [ref=e16] [cursor=pointer]:
+            - /url: /sobre-nosotros?section=informacion
+            - text: Sobre Nosotros
+        - listitem [ref=e17]:
+          - link [ref=e18] [cursor=pointer]:
+            - /url: /contacto
+            - text: Contacto
+  - main [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - heading "Donde la naturaleza esculpe el alma" [level=1] [ref=e23]
+        - paragraph [ref=e24]: Desde 1996 explorando, sintiendo y protegiendo la Serranía de Ronda.
+        - generic [ref=e25]:
+          - link "Próximas Rutas" [ref=e26] [cursor=pointer]:
+            - /url: /actividades
+          - link "Conócenos" [ref=e27] [cursor=pointer]:
+            - /url: /sobre-nosotros
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - heading "Senderismo" [level=3] [ref=e30]
+          - paragraph [ref=e31]: Rutas por la Serranía de Ronda y más allá.
+        - generic [ref=e32]:
+          - heading "Espeleología" [level=3] [ref=e33]
+          - paragraph [ref=e34]: Exploración de simas y cuevas con el Espeleoclub.
+        - generic [ref=e35]:
+          - heading "Solidaridad" [level=3] [ref=e36]
+          - paragraph [ref=e37]: Compromiso social y voluntariado ambiental.
+  - contentinfo [ref=e38]:
+    - paragraph [ref=e39]: © 2026 Asociación de Senderismo y Espeleología Pasos Largos
+```

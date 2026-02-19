@@ -1,5 +1,5 @@
 <div class="sobre-nosotros-container">
-  
+
   <div class="section-content" *ngIf="activeSection === 'informacion'">
     <!-- Header Image Area -->
     <div class="header-banner">
@@ -51,7 +51,7 @@
             <h1>LARGOS</h1>
           </div>
           <h2 class="cursive-subtitle">Nuestra historia</h2>
-          
+
           <div class="quote-box">
             <p>"{{ historyQuote }}"</p>
           </div>
@@ -62,10 +62,11 @@
       <div class="text-columns">
         <div class="col-left">
           <p class="history-text text-justify">
-            <span class="first-letter">L</span>a Asociación Senderista <strong>Pasos Largos</strong> nació en 1996 y, desde entonces, forma parte activa de la vida rondeña y de la Serranía... 
+            <span class="first-letter">L</span>a Asociación Senderista <strong>Pasos Largos</strong> nació en 1996 y,
+            desde entonces, forma parte activa de la vida rondeña y de la Serranía…
             {{ nuestraHistoria[0] }}
           </p>
-          
+
           <div class="highlight-box">
             <p>{{ nuestraHistoria[1] }}</p>
           </div>
@@ -82,7 +83,7 @@
     <!-- NEW SECTION: Qué Hacemos -->
     <div class="que-hacemos-section">
       <div class="que-hacemos-grid">
-        
+
         <!-- Top Left Text Block -->
         <div class="qh-text-block white-text area-tl">
           <p>{{ queHacemos[0] }}</p>
@@ -131,7 +132,8 @@
   <div class="section-content" *ngIf="activeSection === 'tarifas'">
     <section class="tarifas">
       <h3>Tarifas 2026</h3>
-      <p class="disclaimer">Las licencias incluyen la cuota de socio de Pasos Largos. Suplemento de 5€ para tramitaciones posteriores al 1 de febrero.</p>
+      <p class="disclaimer">Las licencias incluyen la cuota de socio de Pasos Largos. Suplemento de 5€ para
+        tramitaciones posteriores al 1 de febrero.</p>
 
       <div class="table-responsive">
         <table>
@@ -158,7 +160,7 @@
         <h4>Otras Cuotas</h4>
         <ul>
           <li *ngFor="let fee of otherFees">
-            <strong>{{ fee.description }}:</strong> {{ fee.price }} 
+            <strong>{{ fee.description }}:</strong> {{ fee.price }}
             <span class="fee-note" *ngIf="fee.note">({{ fee.note }})</span>
           </li>
         </ul>
